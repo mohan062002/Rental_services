@@ -1,0 +1,47 @@
+<!-- templates/_base.html -->
+
+{% extends "_base.html" %}
+
+{% block content %}
+  <!-- Container for demo purpose -->
+  {% include "nav.html"%}
+  <div data-aos="fade-up" class="bg-slate-800 flex flex-col justify-center items-center pb-10">
+    <h1 class="font-semibold font-serif text-5xl text-white mt-16">About Us</h1>
+    <h1 class="mb-14 mt-3 text-white">Some text about who we are and what we do.</h1>
+  </div>
+
+  <div class="flex flex-col justify-center items-center ">
+    <div data-aos="fade-up" class="px-4 font-semibold text-2xl mt-12">Our Services</div>
+    <div class="flex flex-row justify-around mt-[80px]">
+      <img data-aos="fade-right" src="/static/images/loginback (1).jpg" class="w-[600px] h-[350px] mr-[100px] rounded-lg shadow-2xl" alt="">
+     <div data-aos="fade-left" class="flex-col">
+      <p class="w-[500px] mt-[30px]  font-serif  text-xl font-medium text-gray-800">Our work is to provide houses and Rooms to people, who are new to area and need a place to stay.We also contact owners and people in area, who are searching for roommate or paying guests.</p>
+
+      
+     </div>
+    </div>
+
+   
+
+    <div class="flex flex-row justify-around mt-[120px]">
+      <div data-aos="fade-right" class="flex-col">
+       <p class="w-[500px] mt-[30px] font-serif  text-xl font-medium text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sapiente aut, facilis hic vero quae nam neque tempore? Fuga aperiam corrupti eos eaque corporis. Libero blanditiis iure consequuntur nemo amet tempore unde assumenda, laboriosam repellendus. Nesciunt optio animi dolorum adipisci explicabo similique doloribus eius error ullam iure obcaecati, quasi aliquid!</p>
+ 
+       <p class="mt-[10px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, nisi.</p>
+     </div>
+        <img  data-aos="fade-left" src="/static/images/brandon-griggs-wR11KBaB86U-unsplash.jpg" class="w-[600px] h-[350px] ml-[100px] rounded-lg shadow-2xl " alt="">
+    </div>
+
+    <div class="flex flex-row justify-around mt-[120px] mb-16">
+      <img data-aos="fade-right" src="/static/images/interior-2685521__340.jpg" class="w-[600px] h-[350px] mr-[100px] rounded-lg shadow-2xl" alt="">
+     <div data-aos="fade-left" class="flex-col">
+      <p class="w-[500px] mt-[30px] font-serif  text-xl font-medium text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sapiente aut, facilis hic vero quae nam neque tempore? Fuga aperiam corrupti eos eaque corporis. Libero blanditiis iure consequuntur nemo amet tempore unde assumenda, laboriosam repellendus. Nesciunt optio animi dolorum adipisci explicabo similique doloribus eius error ullam iure obcaecati, quasi aliquid!</p>
+
+      <p class="mt-[10px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, nisi.</p>
+     </div>
+    </div>
+  
+  </div>
+
+  {% include "footer.html"%}
+{% endblock content %}

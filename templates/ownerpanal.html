@@ -1,0 +1,156 @@
+{% extends "_base.html"%} {% block content%} {% include "nav.html"%}
+<div class="bg-gray-400">
+  <div class="grid grid-cols-12 ml-36 ">
+
+    <div
+      class="col-span-3 grid grid-cols-1 grid-flow-row-dense bg-gray-200 m-8 rounded-3xl "
+    >
+      <div class="">
+        <div class="flex justify-center">
+          <div
+            class="flex-col w-[300px] h-[300px]  mt-10 relative "
+          >
+            <img
+              src="/static/images/pngwing.com (2).png"
+              class="w-[200px] ml-[50px] mt-[10px] h-[200px]"
+              alt=""
+            />
+            <h1 class="text-center font-serif text-2xl mt-3 text-blue-700">
+              {{bc}}
+            </h1>
+            <p class="text-center font-serif text-xl mt-2 mb-4 text-black">
+              {{de}}
+            </p>
+          </div>
+        </div>
+
+        <hr class="mb-2 mt-2" />
+
+        <div class="flex-col justify-center items-center m-3  ">
+          <div class="flex-col  bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 p-2 py-4 rounded-lg shadow-2xl mb-2">
+            <h1 class="text-center font-serif text-blue-300 text-lg">
+              Rooms vacancies
+            </h1>
+            <p  class="text-white text-center">{{gh}}</p>
+          </div>
+
+          <div class="flex-col bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 p-2 py-4 rounded-lg shadow-2xl mb-2">
+            <h1 class="text-center font-serif text-blue-300 text-lg">
+              Flat vacancies
+            </h1>
+            <p  class="text-white text-center">{{ef}}</p>
+          </div>
+          <div class="flex-col bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 p-2 py-4 rounded-lg shadow-2xl mb-2">
+            <h1 class="text-center font-serif text-blue-300 text-lg">
+              shops vacancies
+            </h1>
+            <p  class="text-white text-center">{{ij}}</p>
+          </div>
+        </div>
+
+        <hr class="mt-5 text-black mb-5" />
+
+        <div class="flex-col justify-center items-center mt-5">
+          <h1
+            class="text-center font-semibold text-blue-800 font-serif text-2xl mb-2"
+          >
+            ABOUT {{bc}}
+          </h1>
+
+          <p class="text-center text-black">
+            Authennticates user of tenant services,Have permission to post property on the site
+          </p>
+        </div>
+      </div>
+
+      <hr class="mt-5 text-black mb-5" />
+
+      <div class="flex-col py-4 justify-center items-center mb-3">
+        <div class="mb-3">
+          <span> </span>
+          <p class="text-center text-black"> Mob No :{{rama}}</p>
+        </div>
+
+        <div>
+          <span></span>
+          <p class="text-center text-black">
+            <a href=""> Email : {{cd}}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-200 m-8 rounded-3xl shadow-2xl  col-span-8">
+      <div class="">
+
+        <div class="flex  justify-center mt-10 gap-3">
+          <h1 class="font-serif font-semibold mt-2 text-2xl">ADD NEW PROPERTY :</h1>
+          <button
+            type="button"
+            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            <a href="{% url 'addinfo'%}"> Add Property</a>
+          </button>
+            
+       
+        </div>
+
+
+       <div class=" grid grid-cols-1 grid-flow-row-dense gap-4  place-items-center">
+
+        {% for n in ab %}
+        <a href="#" data-aos="fade-up" class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:w-[700px] h-[250px] hover:bg-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mt-5">
+            <img class="object-cover w-full rounded-t-lg h-96 md:h-[250px]  md:w-[330px] md:rounded-none md:rounded-l-lg" src="/static/images/r-architecture-2gDwlIim3Uw-unsplash.jpg" alt="">
+            <div class="grid grid-cols-2 grid-flow-row-dense  mt-2 ml-8 gap-x-4 leading-normal">
+                
+                <div class="flex-row  ">
+                    <h4 class="text-lg font-serif font-semibold text-blue-800 ">Property name:</h4>
+                    <p>{{n.9}}</p>
+                </div>
+        
+                <div class="flex-row    ">
+                    <h4 class="text-lg font-serif font-semibold text-blue-800 ">Property type:</h4>
+                    <p>{{n.8}}</p>
+                </div>
+        
+                <div class="flex-row ">
+                    <h4 class="text-lg font-serif font-semibold text-blue-800 ">Adress :</h4>
+                    <p>{{n.10}}</p>
+                </div>
+            
+                <div class="flex-row ">
+                    <h4 class="text-lg font-serif font-semibold text-blue-800 ">city :</h4>
+                    <p>{{n.11}}</p>
+                </div>
+                <div class="flex-row mt-[10px]">
+                    <h4 class="text-lg font-serif font-semibold text-blue-800 ">Monthly charge:</h4>
+                    <p>{{n.12}}</p>
+                </div>
+                <div class="flex-row py-2">
+                    <h4 class="text-lg font-serif font-semibold text-blue-800 ">vacancies:</h4>
+                    <p>{{n.15}}</p>
+                </div>
+        
+              
+            </div>
+        </a>
+        {% endfor %}
+
+       
+
+
+
+
+
+
+
+       </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+  {% include "footer.html"%} {% endblock%}
+</div>

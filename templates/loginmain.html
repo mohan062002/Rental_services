@@ -1,0 +1,105 @@
+{% load compress %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+
+     {% compress css %}
+     <link rel="stylesheet" href="{% static 'src/output.css' %}">
+     {% endcompress %}
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+
+     <div> {% include "nav.html"%} </div>
+     <h1 data-aos="fade-up" class="text-center font-serif text-3xl font-semibold mt-[50px]">Welcome to our portal</h1>
+
+
+     <div  class="flex flex-row justify-center items-center space-x-4 space-y-10">
+          <div data-aos="fade-right" class="bg-stone-400 flex-col w-[400px] h-[350px] rounded-3xl shadow-2xl ">
+               <h1 class="text-center font-serif text-2xl p-2  text-white bg-blue-500">Login as User</h1>
+               <img src="/static/images/pngwing.com (1).png" class="w-[200px]  ml-[100px] mt-[10px]  h-[200px]" alt="">
+               <div class=" flex justify-center mt-[20px]">
+                    <button type="button"
+                         class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><a
+                              href="{% url 'userlogin'%}">login</a></button>
+
+                    <button type="button"
+                         class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                         <a href="{% url 'usersignin'%}">create new account</a></button>
+               </div>
+          </div>
+          <div data-aos="fade-left"  class="bg-stone-400 flex-col w-[400px] h-[350px] rounded-3xl shadow-2xl mt-0 relative bottom-5">
+               <h1 class="text-center font-serif text-2xl p-2  text-white bg-blue-500">Login as Owner</h1>
+               <img src="/static/images/pngwing.com (2).png" class="w-[200px]  ml-[100px] mt-[10px]  h-[200px]" alt="">
+               <div class=" flex justify-center mt-[20px]">
+                    <button type="button"
+                         class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><a
+                              href="{% url 'login'%}">login</a></button>
+
+                     <button type="button"
+                         class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                         <a href="{% url 'signin'%}">create new account</a></button>
+               </div>
+          </div>
+     </div>
+
+     {% include "footer.html"%}
+     
+     <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+       AOS.init({
+          duration:1200
+       });
+     </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- {% load static %}
+
+
+
+
+
+
+{% block content %}
+
+<div > {% include "nav.html"%} </div>
+
+     <div class=" grid grid-cols-1 md:grid-cols-2 grid-flow-row-dense place-items-center h-full w-full ">
+          <div class="bg-stone-400 flex-col w-[400px] h-[350px]  rounded-2xl shadow-2xl mt-[100px]">
+               <h1 class="text-center font-serif text-2xl p-2  text-white bg-blue-500">Login As A User</h1>
+               <img src="/static/images/pngwing.com (1).png"  class="w-[200px]  ml-[100px] mt-[10px]  h-[200px] "alt="">
+                <div class="flex justify-center mt-[20px]">
+                     <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Login</button>
+                     <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">create new account</button>
+                </div> 
+          </div>
+          <div class="bg-stone-400 flex-col w-[400px] h-[350px] rounded-2xl shadow-2xl ">
+               <h1 class="text-center font-serif text-2xl p-2  text-white bg-blue-500">Login As A Owner</h1>
+               <img src="/static/images/pngwing.com (2).png"  class="w-[200px]  ml-[100px] mt-[10px]  h-[200px]" alt="">
+               <div class=" flex justify-center mt-[20px]">
+                <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Login</button>
+                <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">create new account</button>
+               </div> 
+          </div>
+      
+      </div>
+
+{% endblock%} --> -->

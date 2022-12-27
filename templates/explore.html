@@ -1,0 +1,160 @@
+{% extends "_base.html"%} {% block content%} {% include "nav.html"%}
+
+<h1
+  class="text-5xl font-serif font-extrabold text-white bg-slate-800 text-center pb-10 pt-10"
+>
+  Search
+</h1>
+<div class="bg-slate-800 pb-8">
+  <form data-aos="fade-left" action="" method="post" class="flex justify-center space-x-4">
+    {% csrf_token %}
+
+    <div class="col-span-6 sm:col-span-3">
+        <label for="country" class="block text-sm font-medium text-white bg-slate-700">Property Type:</label>
+        <select id="ptype" name="ptype" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+            <option>None</option>
+          <option>Room</option>
+          <option>Flat</option>
+          <option>Shop</option>
+        </select>
+    </div>
+
+    <div class="col-span-6 sm:col-span-3">
+        <label for="country" class="block text-sm font-medium text-white bg-slate-700"> City:</label>
+        <select id="ptype" name="pcity" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+            <option>None</option>
+          <option>Nanded</option>
+          <option>Parbhani</option>
+          <option>Sambhaji Nagar</option>
+          <option>Vishnupuri(Nanded)</option>
+
+        </select>
+    </div>
+
+    <div class="col-span-6 sm:col-span-3">
+        <label for="country" class="block text-sm font-medium text-white bg-slate-700"> Price:</label>
+        <select id="p" name="pmoney" autocomplete="country-name"  class="mt-1 block w-40 rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+            <option >None</option>
+            <option >1200</option>
+            <option>2000</option>
+            <option>3000</option>
+            <option>4000</option>
+        </select>
+    </div>
+
+    <div class="relative mt-5 ml-8">
+        <button
+          type="submit"
+          class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+        >
+          Search
+        </button>
+      </div>
+
+    {% comment %}
+    <div class="flex justify-center">
+      <label for="" class="text-xl font-serif items-center mr-4 mt-2">
+        Search
+      </label>
+    </div>
+    {% endcomment %} {% comment %}
+    <div class="justify-center items-center">
+      <input
+        type="text"
+        name="senddata"
+        placeholder="Search here..."
+        class="w-[400px] mr-4 rounded-2xl shadow-lg"
+      />
+    </div>
+
+    <div class="justify-center items-center">
+      <button
+        type="submit"
+        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-4 mb-2"
+      >
+        Search
+      </button>
+    </div>
+    {% endcomment %}
+  </form>
+</div>
+
+<div class="mt-5">
+  <h1 class="text-center text-xl font-semibold font-sans">
+    Your search result
+  </h1>
+</div>
+
+<div
+  class="grid grid-cols-1 grid-flow-row-dense md:grid-cols-2 md:grid-flow-row-dense place-items-center gap-10 mt-11 mb-11"
+>
+  {% if servicedata == 0 %}
+  <div>
+    <h1>no result found</h1>
+  </div>
+
+  {% else%} {% for n in servicedata %}
+
+  <a
+    href="#"
+    data-aos="fade-up"
+    class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:w-[700px] hover:bg-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+  >
+    <img
+      class="object-cover w-full rounded-t-lg h-96 md:h-[320px] md:w-[330px] md:rounded-none md:rounded-l-lg"
+      src="/static/images/r-architecture-2gDwlIim3Uw-unsplash.jpg"
+      alt=""
+    />
+    <div class="grid grid-cols-2 grid-flow-row-dense ml-5 gap-2 leading-normal">
+      <div class="flex-row py-2">
+        <h4 class="text-lg font-serif font-semibold text-blue-800">
+          Property name:
+        </h4>
+        <p>{{n.2}}</p>
+      </div>
+
+      <div class="flex-row py-2">
+        <h4 class="text-lg font-serif font-semibold text-blue-800">
+          Property type:
+        </h4>
+        <p>{{n.1}}</p>
+      </div>
+
+      <div class="flex-row py-2">
+        <h4 class="text-lg font-serif font-semibold text-blue-800">Adress :</h4>
+        <p>{{n.3}}</p>
+      </div>
+
+      <div class="flex-row py-2">
+        <h4 class="text-lg font-serif font-semibold text-blue-800">city :</h4>
+        <p>{{n.4}}</p>
+      </div>
+      <div class="flex-row py-2">
+        <h4 class="text-lg font-serif font-semibold text-blue-800">
+          Monthly charge:
+        </h4>
+        <p>{{n.5}}</p>
+      </div>
+      <div class="flex-row py-2">
+        <h4 class="text-lg font-serif font-semibold text-blue-800">
+          vacancies:
+        </h4>
+        <p>{{n.8}}</p>
+      </div>
+
+      <div class="pt-4">
+        <button
+          type="button"
+          class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+        >
+          explore more
+        </button>
+      </div>
+    </div>
+  </a>
+
+  {% endfor %} {% endif%}
+</div>
+
+<div class="mt-[200px]">{% include "footer.html"%}</div>
+{% endblock %}

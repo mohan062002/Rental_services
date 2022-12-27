@@ -1,0 +1,63 @@
+{% extends "_base.html" %}
+
+{%block title%}
+home
+{% endblock%}
+
+{% block content %}
+
+{% include "nav.html"%}
+
+<div id="animation-carousel" class="relative" data-carousel="static">
+  <!-- Carousel wrapper -->
+  <div class="relative h-96 overflow-hidden  md:h-[700px]">
+       <!-- Item 1 -->
+       <div class="duration-200 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
+        <img src="/static/images/leohoho-QL7KdXdcfWA-unsplash.jpg" class=" absolute block brightness-50 w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+
+        <div  class="absolute" data-aos="fade-left" data-aos-duration="2000">
+          
+            <h1 class=" text-5xl font-serif text-white font-bold ml-[500px] mt-[250px] "> " TENANT SERVICES "</h1>
+            <p class="font-serif text-white text-2xl  text-center ml-[460px]">higher quality of leaving</p>
+        </div>
+       
+    </div>
+      <!-- Item 2 -->
+      <div class="duration-200 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
+          <img src="/static/images/r-architecture-2gDwlIim3Uw-unsplash.jpg" class="absolute  brightness-50  block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+
+          <div  class="absolute" data-aos="fade-left" data-aos-duration="2000">
+              <p class="font-serif text-white text-2xl ml-[640px] mt-[250px] "></p>
+              <h1 class=" text-5xl font-serif text-white font-bold ml-[380px]"> START YOUR BUSINESS WITH US</h1>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="duration-200 ease-linear absolute inset-0 transition-all transform translate-x-0 z-20" data-carousel-item="active">
+            <img src="/static/images/tierra-mallorca-rgJ1J8SDEAY-unsplash.jpg" class=" brightness-50 absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            
+            <div  class="absolute" data-aos="fade-left" data-aos-duration="2000">
+                <h1 class=" text-5xl font-serif text-white font-bold mt-[250px] ml-[420px]"> FIND YOUR HOUSE WITH US</h1>
+                <p class="font-serif text-white text-2xl ml-[640px] mt-[5px] ">get your dream house</p>
+        </div>
+      </div>
+      <!-- Item 4 -->
+      <
+  </div>
+  <!-- Slider controls -->
+  <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev="">
+      <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          <span class="sr-only">Previous</span>
+      </span>
+  </button>
+  <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next="">
+      <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          <span class="sr-only">Next</span>
+      </span>
+  </button>
+</div>
+
+
+
+{% endblock content %}
