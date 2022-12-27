@@ -52,7 +52,7 @@ str=''
 # print(check_password('1234','pbkdf2_sha256$390000$WmWPpM1qaErlDV7lFltis5$DF5b9KSRN4OTkUy6E0XKU6Z/Klqat2TcnzB320ZLv0I='))
 
 def home(request):
-    return render(request,'index.html');
+    return render(request,'home.html');
 
 #function for owner signin
 def  signin(request):
